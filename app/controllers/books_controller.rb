@@ -11,14 +11,14 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
-  def create 
+  def create
     @book = Book.new(book_params)
     if @book.save
       flash[:notice] = "Book was successfully created"
       redirect_to books_path
     else
       flash[:notice] = "Book could not be created. Please check required fields"
-      render('new')
+      render("new")
     end
   end
 
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
       redirect_to books_path
     else
       flash[:notice] = "Book could not be updated. Please check required fields"
-      render('edit')
+      render("edit")
     end
   end
 

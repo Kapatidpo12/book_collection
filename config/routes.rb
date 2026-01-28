@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       get :delete
     end
   end
-  
-  root 'books#index'
 
+  root "books#index"
 end
