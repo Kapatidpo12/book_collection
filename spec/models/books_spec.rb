@@ -10,11 +10,11 @@ RSpec.describe "Books", type: :request do
           price: 29.99,
           published_date: Date.today
         }
-        
+
         expect {
           post books_path, params: { book: book_params }
         }.to change(Book, :count).by(1)
-        
+
         expect(response).to redirect_to(books_path)
         follow_redirect!
         expect(response.body).to include("Book was successfully created")
@@ -29,7 +29,7 @@ RSpec.describe "Books", type: :request do
           price: 29.99,
           published_date: Date.today
         }
-        
+
         post books_path, params: { book: book_params }
         expect(response.body).to include("Book could not be created.")
       end
@@ -43,7 +43,7 @@ RSpec.describe "Books", type: :request do
           price: 29.99,
           published_date: Date.today
         }
-        
+
         post books_path, params: { book: book_params }
         expect(response.body).to include("Book could not be created.")
       end
@@ -57,7 +57,7 @@ RSpec.describe "Books", type: :request do
           price: nil,
           published_date: Date.today
         }
-        
+
         post books_path, params: { book: book_params }
         expect(response.body).to include("Book could not be created.")
       end
@@ -71,7 +71,7 @@ RSpec.describe "Books", type: :request do
           price: 29.99,
           published_date: nil
         }
-        
+
         post books_path, params: { book: book_params }
         expect(response.body).to include("Book could not be created.")
       end
@@ -85,7 +85,7 @@ RSpec.describe "Books", type: :request do
           price: -10,
           published_date: Date.today
         }
-        
+
         post books_path, params: { book: book_params }
         expect(response.body).to include("Book could not be created.")
       end
