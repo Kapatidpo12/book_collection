@@ -67,3 +67,7 @@ end
 
 
 gem "concurrent-ruby", "1.3.4"
+
+group :test do
+  gem 'simplecov', require: false
+end
