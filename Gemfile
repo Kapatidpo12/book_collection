@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby "3.4.6"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.4"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -45,7 +47,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
-  gem "brakeman", require: false
+  gem "brakeman", "~> 8.0", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
@@ -67,3 +69,7 @@ end
 
 
 gem "concurrent-ruby", "1.3.4"
+
+group :test do
+  gem "simplecov", require: false
+end
