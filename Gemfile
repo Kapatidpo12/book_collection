@@ -68,7 +68,7 @@ group :test do
 end
 
 
-gem "concurrent-ruby", "1.3.4"
+gem "concurrent-ruby", "1.3.6"
 
 group :test do
   gem "simplecov", require: false
